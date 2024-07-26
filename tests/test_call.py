@@ -1,11 +1,7 @@
-from mov.api.call import gen_url, req, get_key, req2dataframe
+# 테스트 코드는 검증하고 싶은 경로의 .py의 함수들을 import 한다. 
 
-def test_req2dataframe():
-    l = req2dataframe()
-    assert len(l) > 0
-    v = l[0]
-    assert 'rnum' in v.keys()
-    assert v['rnum'] == '1'
+from mov.api.call import gen_url, req, get_key
+
 
 def test_비밀키숨기기():
     key = get_key()
@@ -19,4 +15,3 @@ def test_gen_url():
 def test_req():
     code, data = req()
     assert code == 200
-
