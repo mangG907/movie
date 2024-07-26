@@ -1,10 +1,17 @@
 import requests
 import os
+import pandas
+
+def list2df():
+    l = req2dataframe()
+    df = pd.DataFrame(l)
+    return df
 
 def req2dataframe():
     _, data = req()
     l = data['boxOfficeResult']['dailyBoxOfficeList']
-    return l
+    pf = list2df(l)
+    return pf
 
 def get_key():
     key = os.getenv('MOVIE_API_KEY')
