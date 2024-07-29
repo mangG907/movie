@@ -8,6 +8,7 @@ authors = [
 dependencies = [
     "requests>=2.32.3",
     "pandas>=2.2.2",
+    "numpy>=2.0.1",
 ]
 requires-python = ">=3.9"
 readme = "README.md"
@@ -24,6 +25,11 @@ test = [
 ]
 [project.scripts]
 mov-ping = 'mov.cli:ping'
+
+[tool.pytest.ini_options]
+pythonpath = [
+  ".", "src",
+]
 
 [project.urls]
 Homepage = "https://github.com/mangG907/movie"
