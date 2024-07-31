@@ -37,7 +37,7 @@ def save_data(ds_nodash):
 
 
 
-def save2df(load_dt='20120101'):
+def save2df(load_dt='20120101', url_param={}):
     """airflow 호출 지점"""
     df = list2df(load_dt)
     df['load_dt'] = load_dt
@@ -45,7 +45,7 @@ def save2df(load_dt='20120101'):
     df.to_parquet('~/tmp/test_parquet', partition_cols=['load_dt'])
     return df
 
-def list2df(load_dt='20120101'):
+def list2df(load_dt='20120101', url_param={}):
     l = req2list(load_dt)
     df = pd.DataFrame(l)
     return df
