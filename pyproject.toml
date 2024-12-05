@@ -1,15 +1,37 @@
 [project]
 name = "mov"
 version = "0.1.0"
-description = "Default template for PDM package"
+description = "영화진흥위원회 영화순위 데이터 처리"
 authors = [
     {name = "mangG907", email = "mang.gee@gmail.com"},
 ]
-dependencies = []
-requires-python = "==3.11.*"
+dependencies = [
+    "requests>=2.32.3",
+    "pandas>=2.2.2",
+    "numpy>=2.0.1",
+    "pyarrow>=17.0.0",
+]
+requires-python = ">=3.9"
 readme = "README.md"
 license = {text = "MIT"}
 
 
 [tool.pdm]
-distribution = false
+distribution = true
+
+[tool.pdm.dev-dependencies]
+test = [
+    "pytest>=8.3.2",
+    "pytest-cov>=5.0.0",
+]
+[project.scripts]
+mov-ping = 'mov.cli:ping'
+
+[tool.pytest.ini_options]
+pythonpath = [
+  ".", "src",
+]
+
+[project.urls]
+Homepage = "https://github.com/mangG907/movie"
+Issues = "https://github.com/mangG907/movie/issues"

@@ -14,8 +14,10 @@ $ pip install git+https://github.com/dMario24/mov.git@<BRANCH_NAME>
 ```
 $ git clone <URL>
 $ cd <DIR>
+$ source .ven/bin/activate
 
 $ # option
 $ pdm venv create
-$ source .ven/bin/activate
 ```
+
+### setting env
